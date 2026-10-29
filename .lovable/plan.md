@@ -1,91 +1,115 @@
-# Plano técnico — VenceHoje MVP
+# Plano técnico revisado — VenceHoje MVP
 
-Aplicação web real (não protótipo) em português, com Lovable Cloud para banco, login e funções de servidor. Visual limpo com a paleta enviada (#12304B, #059B78, #F59E0B, #DC5A5A, #F6F8FA) e fonte Manrope. Logo em SVG próprio (calendário + check).
+Aplicação web real (não protótipo) em português, com Lovable Cloud para banco, login e funções de servidor. Visual limpo com a paleta enviada (#12304B, #059B78, #F59E0B, #DC5A5A, #F6F8FA) e fonte Manrope. Logo em SVG próprio (calendário + check). Nada fora do escopo será adicionado.
 
 ## 1. Estrutura de páginas
 
 Públicas:
-- `/` landing (cabeçalho, hero com prévia ilustrativa do painel, benefícios, como funciona, públicos, planos, formulário de interesse, rodapé)
-- `/beneficios`, `/como-funciona`, `/planos` (seções também na landing; links do menu levam às páginas próprias)
+- `/` landing com seções âncora: Benefícios, Como funciona, Públicos, Planos, formulário de interesse, rodapé (sem páginas redundantes)
 - `/privacidade`, `/termos` (texto marcado como provisório)
 - `/auth` (entrar / criar conta), `/esqueci-senha`, `/reset-password`
 
 Privadas (usuário logado):
 - `/boas-vindas` (onboarding: nome, perfil, nome do negócio)
-- `/painel` (indicadores + filtros de período)
-- `/lancamentos` (tabela no desktop, cartões no celular) e detalhe em painel lateral com histórico de baixas
-- `/agenda` (mês + lista cronológica)
-- `/lembretes`
-- `/contatos`, `/categorias`
-- `/configuracoes`
+- `/painel`, `/lancamentos` (detalhe com histórico de baixas), `/agenda`, `/lembretes`, `/contatos`, `/categorias`, `/configuracoes`
 
-Administração (somente papel admin, verificado no servidor):
+Administração (papel admin verificado no servidor):
 - `/admin`, `/admin/leads`, `/admin/clientes`, `/admin/assinaturas`, `/admin/configuracoes`
 
 ## 2. Componentes principais
-AppShell (barra lateral desktop / menu inferior ou gaveta no celular), Logo, KpiCard, PeriodFilter, EntryForm (dialog), EntryTable/EntryCard, StatusBadge (cor + texto), SettlementDialog, SettlementHistory, RecurrenceScopeDialog ("só esta" / "esta e futuras"), CalendarMonth, AgendaList, ReminderList, ContactForm, CategoryManager, LeadForm, AdminTable, EmptyState, ConfirmDialog. Formatação BRL e DD/MM/AAAA centralizada em utilitários.
+AppShell (barra lateral desktop / gaveta no celular), Logo, KpiCard, PeriodFilter, EntryForm, EntryTable/EntryCard, StatusBadge (cor + texto), SettlementDialog, SettlementHistory, RecurrenceScopeDialog ("só esta" / "esta e futuras"), CalendarMonth, AgendaList, ReminderList, ContactForm, CategoryManager, LeadForm, AdminTable, EmptyState, ConfirmDialog. Formatação BRL e DD/MM/AAAA centralizada.
 
 ## 3. Modelo de dados
-Simplificação: um workspace por usuário criado automaticamente no cadastro (estrutura pronta para crescer, sem compartilhamento no MVP).
+Um workspace por usuário, criado automaticamente no cadastro (sem compartilhamento no MVP).
 
-- `profiles` (user_id, nome, perfil, nome_negocio, onboarding_concluido)
-- `workspaces` + `workspace_members` (dono único)
-- `user_preferences` (antecedência de lembrete 1/3/7)
-- `categories` (workspace, tipo pagar/receber, nome, ativa, padrão) — padrões criados no cadastro
-- `contacts` (workspace, nome, tipo pessoa/empresa, email, telefone, obs)
-- `recurrence_rules` (workspace, frequência semanal/mensal/anual, dia âncora, data inicial, data final opcional, modelo do lançamento, gerado_até)
-- `financial_entries` (workspace, tipo, descrição, valor numeric(14,2), vencimento date, categoria, contato, obs, recurrence_rule_id, índice da ocorrência, editada_individualmente, timestamps) — único por (regra, data original) para impedir duplicação
-- `settlements` (entry, valor numeric(14,2), data efetiva, obs) — gatilho no banco impede soma acima do valor do lançamento e valores ≤ 0
-- `leads` (nome, email, whatsapp, perfil, comentário, consentimento, origem, situação, convertido_em_user_id)
-- `commercial_notes` (lead ou cliente, texto, autor)
-- `subscriptions` (user_id, plano, status Teste/Ativa/Pendente/Cancelada, início, vencimento contratual, valor, obs)
-- `app_settings` (WhatsApp comercial configurável, vazio por padrão)
-- `user_roles` + função `has_role` (papéis em tabela separada)
-- `lead_rate_limits` (hash de IP/e-mail + horário, para limite de envios)
+- `profiles`, `workspaces`, `workspace_members`, `user_preferences` (antecedência 1/3/7)
+- `categories` (tipo, nome, ativa; padrões criados no cadastro; desativação em vez de exclusão quando em uso)
+- `contacts`
+- `recurrence_rules` (frequência, dia âncora, data inicial, data final opcional, modelo do lançamento, `gerado_ate`, `regra_anterior_id` para histórico de alterações de série)
+- `recurrence_exceptions` (regra, data original, motivo: excluída) — impede que ocorrências removidas reapareçam
+- `financial_entries` (valor numeric(14,2), vencimento date, regra, data original da ocorrência, `editada_individualmente`, timestamps) — único por (regra, data original)
+- `settlements` (lançamento, valor numeric(14,2), data efetiva, obs)
+- `settlement_audit` (registro de correções/exclusões de baixas: valor anterior, autor, data)
+- `leads` (dados, consentimento, `consentimento_em`, `consentimento_versao`, origem, situação, contagem de envios, último envio, `anonimizado_em`, vínculo com usuário convertido)
+- `commercial_notes`, `subscriptions`, `app_settings` (WhatsApp comercial, vazio por padrão), `lead_rate_limits`
+- `user_roles` + função `has_role`
 
-Situação (Pendente/Parcial/Quitado/Atrasado) é calculada a partir do saldo e da data de hoje em São Paulo — não gravada.
+Situação (Pendente/Parcial/Quitado/Atrasado) calculada pelo saldo e pela data de hoje em São Paulo.
 
-## 4. Autenticação e autorização
+## 4. Integridade financeira
+- Registrar, corrigir e excluir baixas por funções no banco (transação única) que travam a linha do lançamento (`SELECT ... FOR UPDATE`) antes de somar — baixas simultâneas não ultrapassam o valor.
+- Gatilho de reforço: rejeita baixa ≤ 0 e soma acima do valor, mesmo fora das funções.
+- Gatilho impede reduzir o valor do lançamento abaixo do total já baixado.
+- Lançamento com baixas não pode ser excluído diretamente: o usuário precisa excluir as baixas antes (com confirmação), e cada correção/exclusão de baixa fica registrada em `settlement_audit`. Nada some silenciosamente.
+- Totais do painel calculados no banco a partir dos lançamentos e baixas atuais (sem valores cacheados), então refletem alterações e exclusões imediatamente.
+
+## 5. Recorrência
+- Regras guardam o modelo; ocorrências são linhas reais com identidade própria. Baixa sempre ligada a uma única ocorrência.
+- Janela móvel: ocorrências são materializadas até 12 meses à frente de hoje. Séries sem data final avançam essa janela ao abrir o app. Se o usuário consultar um período além da janela (até o limite de 24 meses), a geração é estendida para cobrir o período consultado. Restrição única + função idempotente evitam duplicatas.
+- Datas são geradas sempre a partir do dia âncora: 31/jan → 28 ou 29/fev → 31/mar; dez → jan do ano seguinte.
+- Geração pula datas presentes em `recurrence_exceptions`.
+- Excluir "só esta": remove a ocorrência (se não tiver baixas) e grava exceção. "Esta e futuras": define data final na regra e remove apenas futuras sem baixas e não editadas.
+- Editar "só esta": altera a linha e marca `editada_individualmente`.
+- Editar "esta e futuras": encerra a regra antiga na véspera, cria nova regra ligada à anterior e atualiza apenas ocorrências futuras elegíveis (sem baixas e não editadas individualmente). Ocorrências pagas, parciais ou editadas são preservadas com seus valores.
+
+## 6. Autenticação, autorização e administração
 - E-mail e senha, confirmação de e-mail, recuperação de senha, sessão persistente.
-- Rotas privadas sob área protegida; admin sob sub-área que confere o papel.
-- RLS em todas as tabelas privadas: acesso só a registros do próprio workspace.
-- Admin lê perfis, leads, assinaturas e notas comerciais — sem política que permita ler lançamentos, baixas, contatos ou categorias de outros usuários.
-- Nenhuma política permite usuário inserir/alterar `user_roles`.
-- Primeiro admin: provisionado manualmente por mim via comando SQL no banco depois que você criar sua conta (você me informa o e-mail). Nada automático para o primeiro cadastrado.
-- Formulário de lead enviado por função de servidor com validação (zod), campo-armadilha anti-bot, limite de envios por IP/e-mail e bloqueio de duplo clique.
+- RLS em todas as tabelas privadas: acesso só ao próprio workspace.
+- Admin lê perfis, leads, assinaturas e notas comerciais; nenhuma política dá ao admin acesso a lançamentos, baixas, contatos, categorias ou recorrências de clientes.
+- `user_roles`: usuários só leem o próprio papel; nenhuma política de inserção/alteração para usuários comuns.
+- Funções de servidor administrativas verificam o papel no servidor antes de qualquer operação; funções do usuário usam o login dele e respeitam RLS.
+- Primeiro admin: você cria a conta normalmente pela tela de cadastro e me informa apenas o e-mail; eu atribuo o papel por comando no banco. Nunca será pedida senha. Procedimento documentado no README (incluindo como adicionar/remover admins).
 
-## 5. Estratégia de recorrência
-- Regra guarda o modelo; ocorrências são linhas reais com identidade própria.
-- Geração limitada: ao criar a regra e ao abrir o app, gera ocorrências até 12 meses à frente (ou data final), avançando `gerado_até`. Restrição única evita duplicatas em recarregamentos.
-- Dia 29/30/31 em mês menor usa o último dia do mês, sempre a partir do dia âncora (31/jan → 28/fev → 31/mar).
-- Editar "só esta": altera a linha e marca como individual. "Esta e futuras": encerra a regra antiga na véspera e cria nova regra a partir dela; ocorrências futuras sem baixa são regeneradas.
-- Excluir "só esta" ou "futuras" (futuras sem baixas são removidas e a regra recebe data final).
-- Baixa sempre ligada a uma única ocorrência.
+## 7. Leads e privacidade
+- Consentimento comercial em caixa separada, nunca pré-marcada; grava data e versão do texto aceito.
+- Envio por função de servidor: validação, campo-armadilha anti-bot, limite por IP/e-mail, bloqueio de duplo clique.
+- Duplicados: mesmo e-mail atualiza o lead existente (contagem de envios, último envio, novo comentário) em vez de criar outro.
+- Admin pode anonimizar (apaga nome, contato e comentário, mantém só dados agregados) ou excluir um lead. Política de retenção fica como pendência a definir por você.
+- WhatsApp só aparece quando o número estiver configurado, e a mensagem contém apenas o que a pessoa preencheu e autorizou.
 
-## 6. Dependências externas
-Apenas Lovable Cloud. Sem Stripe, e-mail transacional, push ou WhatsApp automático. WhatsApp na landing só abre link `wa.me` quando o número estiver configurado pelo admin.
+## 8. Dependências externas
+Apenas Lovable Cloud. Sem Stripe, e-mail transacional, push ou WhatsApp automático.
 
-## 7. Ordem de implementação
+## 9. Ordem de implementação
 1. Ativar Lovable Cloud, identidade visual, logo, layout.
-2. Banco completo: tabelas, gatilhos, RLS, papéis, dados padrão no cadastro.
+2. Banco: tabelas, gatilhos, funções transacionais, RLS, papéis, dados padrão no cadastro.
 3. Landing, páginas legais, formulário de lead.
 4. Login, cadastro, recuperação, onboarding.
 5. Lançamentos, categorias, contatos, baixas.
 6. Recorrência.
-7. Painel, agenda, lembretes, configurações (incl. troca de senha e pedido de exclusão da conta).
+7. Painel, agenda, lembretes, configurações.
 8. Área admin.
-9. Testes automatizados das regras, verificação no navegador, revisão de segurança.
-10. README e `docs/` (mega-prompt, correções). O Canvas em `docs/business-model-canvas.png` e capturas só se produzidos; sem links quebrados.
+9. Testes, verificação no navegador, revisão de segurança.
+10. README e `docs/` (mega-prompt, correções); Canvas e capturas só se produzidos, sem links quebrados.
 
-## 8. Riscos técnicos
-- Datas e fuso: tratar vencimentos como data de calendário (sem hora) para evitar deslocamento por UTC.
-- Edição de séries com baixas existentes: ocorrências já pagas nunca são alteradas pela edição da série.
-- Limite de envio de leads em servidor sem estado: feito com tabela no banco.
-- TAM/SAM/SOM no README são estimativas com fontes públicas (IBGE, Sebrae, Receita) identificadas como hipóteses.
-- Sincronização com GitHub (`vencehoje-mvp`) é feita por você nas configurações do projeto; eu deixo tudo pronto.
+## 10. Critérios de aceitação e testes
+Testes automatizados de regras (código):
+- Situação calculada (pendente, parcial, quitado, atrasado, parcial atrasado).
+- Geração mensal: fim de mês (31 → fevereiro bissexto e não bissexto), virada de ano, semanal e anual.
+- Exceção impede reaparecimento; regeração idempotente.
+- Edição de série preserva ocorrências pagas/editadas; edição isolada não altera a série.
+- Totais do painel por período sem duplicar recorrências.
 
-## 9. Critérios de aceitação
-Os 15 cenários do item 20. Cobertura automatizada: cálculo de situação, saldo com baixas parciais, bloqueio de excesso, geração mensal com fim de mês, edição de ocorrência isolada, totais do painel sem duplicar recorrências. Verificação no navegador: cadastro, lançamentos, painel, agenda, celular. Isolamento entre usuários e bloqueio do admin verificados via políticas no banco. O que não puder ser automatizado será listado com instruções de verificação manual.
+Testes no banco (executados com dois usuários de teste):
+- Baixa acima do saldo rejeitada; duas baixas simultâneas não ultrapassam o valor.
+- Redução do valor abaixo do baixado rejeitada; exclusão de lançamento com baixas bloqueada.
+- Usuário A não lê nem altera dados do usuário B.
+- Usuário comum não altera o próprio papel nem chama funções administrativas.
+- Admin não lê lançamentos ou baixas de clientes.
+
+Verificação no navegador: cadastro e login, lançamento a pagar/receber, painel, baixa parcial e total, agenda, lead aparecendo no admin, assinatura manual, desktop e celular.
+
+O resumo final separará claramente testes executados e verificações pendentes (com instruções manuais). A aplicação não será declarada pronta se houver falha de autorização ou de integridade financeira.
+
+## 11. Riscos remanescentes
+- Datas e fuso: vencimentos tratados como data sem hora; "hoje" calculado em São Paulo.
+- Janela de recorrência: consultas além de 24 meses mostram apenas até o limite (informado na tela).
+- Limite de envio de leads é básico (por IP/e-mail); ataques distribuídos exigiriam proteção adicional depois.
+- Confirmação de e-mail depende do envio padrão do Lovable Cloud; e-mails com marca própria ficam para depois.
+- Pedido de exclusão de conta é registrado para o admin processar (não apaga automaticamente).
+- Política de retenção de leads e textos legais definitivos dependem de você.
+- TAM/SAM/SOM no README serão estimativas com fontes públicas, identificadas como hipóteses.
+- Sincronização com GitHub (`vencehoje-mvp`) é feita por você nas configurações do projeto.
 
 ## Fora do escopo
-Tudo listado no item 22 (bancos, Pix, boletos, nota fiscal, chatbot, IA, múltiplas empresas, equipes).
+Tudo do item 22 do briefing (bancos, Pix, boletos, nota fiscal, chatbot, IA, múltiplas empresas, equipes).
