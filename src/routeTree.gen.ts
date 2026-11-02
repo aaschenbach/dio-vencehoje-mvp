@@ -17,6 +17,10 @@ import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as AuthenticatedAgendaRouteImport } from './routes/_authenticated/agenda'
+import { Route as AuthenticatedBoasVindasRouteImport } from './routes/_authenticated/boas-vindas'
+import { Route as AuthenticatedCategoriasRouteImport } from './routes/_authenticated/categorias'
+import { Route as AuthenticatedConfiguracoesRouteImport } from './routes/_authenticated/configuracoes'
+import { Route as AuthenticatedContatosRouteImport } from './routes/_authenticated/contatos'
 import { Route as AuthenticatedLancamentosRouteImport } from './routes/_authenticated/lancamentos'
 import { Route as AuthenticatedLembretesRouteImport } from './routes/_authenticated/lembretes'
 import { Route as AuthenticatedPainelRouteImport } from './routes/_authenticated/painel'
@@ -60,6 +64,27 @@ const AuthenticatedAgendaRoute = AuthenticatedAgendaRouteImport.update({
   path: '/agenda',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedBoasVindasRoute = AuthenticatedBoasVindasRouteImport.update({
+  id: '/boas-vindas',
+  path: '/boas-vindas',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCategoriasRoute = AuthenticatedCategoriasRouteImport.update({
+  id: '/categorias',
+  path: '/categorias',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedConfiguracoesRoute =
+  AuthenticatedConfiguracoesRouteImport.update({
+    id: '/configuracoes',
+    path: '/configuracoes',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedContatosRoute = AuthenticatedContatosRouteImport.update({
+  id: '/contatos',
+  path: '/contatos',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedLancamentosRoute =
   AuthenticatedLancamentosRouteImport.update({
     id: '/lancamentos',
@@ -85,6 +110,10 @@ export interface FileRoutesByFullPath {
   '/reset-password': typeof ResetPasswordRoute
   '/termos': typeof TermosRoute
   '/agenda': typeof AuthenticatedAgendaRoute
+  '/boas-vindas': typeof AuthenticatedBoasVindasRoute
+  '/categorias': typeof AuthenticatedCategoriasRoute
+  '/configuracoes': typeof AuthenticatedConfiguracoesRoute
+  '/contatos': typeof AuthenticatedContatosRoute
   '/lancamentos': typeof AuthenticatedLancamentosRoute
   '/lembretes': typeof AuthenticatedLembretesRoute
   '/painel': typeof AuthenticatedPainelRoute
@@ -97,6 +126,10 @@ export interface FileRoutesByTo {
   '/reset-password': typeof ResetPasswordRoute
   '/termos': typeof TermosRoute
   '/agenda': typeof AuthenticatedAgendaRoute
+  '/boas-vindas': typeof AuthenticatedBoasVindasRoute
+  '/categorias': typeof AuthenticatedCategoriasRoute
+  '/configuracoes': typeof AuthenticatedConfiguracoesRoute
+  '/contatos': typeof AuthenticatedContatosRoute
   '/lancamentos': typeof AuthenticatedLancamentosRoute
   '/lembretes': typeof AuthenticatedLembretesRoute
   '/painel': typeof AuthenticatedPainelRoute
@@ -111,6 +144,10 @@ export interface FileRoutesById {
   '/reset-password': typeof ResetPasswordRoute
   '/termos': typeof TermosRoute
   '/_authenticated/agenda': typeof AuthenticatedAgendaRoute
+  '/_authenticated/boas-vindas': typeof AuthenticatedBoasVindasRoute
+  '/_authenticated/categorias': typeof AuthenticatedCategoriasRoute
+  '/_authenticated/configuracoes': typeof AuthenticatedConfiguracoesRoute
+  '/_authenticated/contatos': typeof AuthenticatedContatosRoute
   '/_authenticated/lancamentos': typeof AuthenticatedLancamentosRoute
   '/_authenticated/lembretes': typeof AuthenticatedLembretesRoute
   '/_authenticated/painel': typeof AuthenticatedPainelRoute
@@ -125,6 +162,10 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/termos'
     | '/agenda'
+    | '/boas-vindas'
+    | '/categorias'
+    | '/configuracoes'
+    | '/contatos'
     | '/lancamentos'
     | '/lembretes'
     | '/painel'
@@ -137,6 +178,10 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/termos'
     | '/agenda'
+    | '/boas-vindas'
+    | '/categorias'
+    | '/configuracoes'
+    | '/contatos'
     | '/lancamentos'
     | '/lembretes'
     | '/painel'
@@ -150,6 +195,10 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/termos'
     | '/_authenticated/agenda'
+    | '/_authenticated/boas-vindas'
+    | '/_authenticated/categorias'
+    | '/_authenticated/configuracoes'
+    | '/_authenticated/contatos'
     | '/_authenticated/lancamentos'
     | '/_authenticated/lembretes'
     | '/_authenticated/painel'
@@ -223,6 +272,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAgendaRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/boas-vindas': {
+      id: '/_authenticated/boas-vindas'
+      path: '/boas-vindas'
+      fullPath: '/boas-vindas'
+      preLoaderRoute: typeof AuthenticatedBoasVindasRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/categorias': {
+      id: '/_authenticated/categorias'
+      path: '/categorias'
+      fullPath: '/categorias'
+      preLoaderRoute: typeof AuthenticatedCategoriasRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/configuracoes': {
+      id: '/_authenticated/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof AuthenticatedConfiguracoesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/contatos': {
+      id: '/_authenticated/contatos'
+      path: '/contatos'
+      fullPath: '/contatos'
+      preLoaderRoute: typeof AuthenticatedContatosRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/lancamentos': {
       id: '/_authenticated/lancamentos'
       path: '/lancamentos'
@@ -249,6 +326,10 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAgendaRoute: typeof AuthenticatedAgendaRoute
+  AuthenticatedBoasVindasRoute: typeof AuthenticatedBoasVindasRoute
+  AuthenticatedCategoriasRoute: typeof AuthenticatedCategoriasRoute
+  AuthenticatedConfiguracoesRoute: typeof AuthenticatedConfiguracoesRoute
+  AuthenticatedContatosRoute: typeof AuthenticatedContatosRoute
   AuthenticatedLancamentosRoute: typeof AuthenticatedLancamentosRoute
   AuthenticatedLembretesRoute: typeof AuthenticatedLembretesRoute
   AuthenticatedPainelRoute: typeof AuthenticatedPainelRoute
@@ -256,6 +337,10 @@ interface AuthenticatedRouteRouteChildren {
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAgendaRoute: AuthenticatedAgendaRoute,
+  AuthenticatedBoasVindasRoute: AuthenticatedBoasVindasRoute,
+  AuthenticatedCategoriasRoute: AuthenticatedCategoriasRoute,
+  AuthenticatedConfiguracoesRoute: AuthenticatedConfiguracoesRoute,
+  AuthenticatedContatosRoute: AuthenticatedContatosRoute,
   AuthenticatedLancamentosRoute: AuthenticatedLancamentosRoute,
   AuthenticatedLembretesRoute: AuthenticatedLembretesRoute,
   AuthenticatedPainelRoute: AuthenticatedPainelRoute,
