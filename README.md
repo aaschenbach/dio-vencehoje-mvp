@@ -2,7 +2,7 @@
 
 Aplicação web em português brasileiro para organizar **contas a pagar e a receber**, vencimentos, baixas parciais e recorrências. Projeto de aprendizagem e validação de produto; **não é um banco, não movimenta dinheiro e não executa cobranças**.
 
-> **Estado em 04/11/2026:** MVP funcional em pré-visualização, com 21 cenários funcionais relatados como aprovados pelo responsável pelos testes. A verificação GitHub Actions (TypeScript, Vitest e build) também passou na branch de correção anterior. **Ainda não liberado para publicação comercial:** revisão legal e retenção de dados, documentação administrativa, testes restantes e revisão final de segurança.
+> **Estado em 04/11/2026:** implementação do MVP encerrada para fins internos, com ressalvas. O responsável relatou 21 cenários funcionais aprovados nas duas primeiras rodadas, além da conclusão dos testes administrativos. O GitHub Actions (TypeScript, testes e build) passou. **Não liberado comercialmente:** permanecem P1/P2, acesso funcional a uma segunda conta comum, textos legais definitivos, retenção e revisão de segurança.
 
 ## O que faz
 
@@ -62,6 +62,9 @@ O workflow [Validate MVP](.github/workflows/validate.yml) executa essas verifica
 2. [Matriz de testes e evidências](docs/VALIDACAO.md)
 3. [Checklist de publicação, privacidade e operação](docs/PUBLICACAO.md)
 4. [Modelo de negócio e hipóteses](docs/NEGOCIO.md)
+5. [Encerramento interno do MVP](docs/ENCERRAMENTO_MVP.md)
+6. [Roteiro de testes finais P1/P2](docs/TESTES_FINAIS.md)
+7. [Minutas legais para revisão](docs/MINUTAS_LEGAIS.md)
 
 Não há capturas de tela ou imagem do Business Model Canvas versionadas neste repositório; não foram criados links fictícios. O briefing e os prompts integrais do Lovable não estão disponíveis aqui como arquivos verificados e não são apresentados como anexos.
 
