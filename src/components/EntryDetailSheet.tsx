@@ -36,7 +36,7 @@ export function EntryDetailSheet({ entryId, onClose }: { entryId: string | null;
     setBusy(true);
     const { error } = await supabase.from("settlements").delete().eq("id", delSettlement.id);
     setBusy(false);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Baixa excluída. O registro fica no histórico de alterações.");
     setDelSettlement(null);
     qc.invalidateQueries();
@@ -209,7 +209,7 @@ export function EntryDetailSheet({ entryId, onClose }: { entryId: string | null;
 function SettlementDialog({
   open, onOpenChange, entryId, maxCents, settlement, kind,
 }: {
-  open: boolean; onOpenChange: (o: boolean) => void; entryId: string; maxCents: number; settlement?: Settlement; kind: "pagar" | "receber";
+  open: boolean; onOpenChange: (o: boolean) => void; entryId: string; maxCents: number; settlement?: Settlement | undefined; kind: "pagar" | "receber";
 }) {
   const qc = useQueryClient();
   const [amount, setAmount] = useState("");
