@@ -79,13 +79,13 @@ export function EntryFormDialog({ open, onOpenChange, entry, defaultKind = "paga
     if (busy) return;
     const errs: Record<string, string> = {};
     const amt = parseBRLInput(amount);
-    if (!description.trim()) errs.description = "Informe uma descrição.";
-    if (!amt || Number(amt) <= 0) errs.amount = "Informe um valor maior que zero, ex.: 150,00.";
+    if (!description.trim()) errs["description"] = "Informe uma descrição.";
+    if (!amt || Number(amt) <= 0) errs["amount"] = "Informe um valor maior que zero, ex.: 150,00.";
     else if (entry && Number(amt) < entry.paid_total)
-      errs.amount = `O valor não pode ser menor que o já baixado (${formatBRL(entry.paid_total)}).`;
-    if (!due) errs.due = "Informe a data de vencimento.";
-    if (!categoryId) errs.category = "Escolha uma categoria.";
-    if (frequency !== "nenhuma" && endDate && endDate < due) errs.end = "A data final deve ser depois da inicial.";
+      errs["amount"] = `O valor não pode ser menor que o já baixado (${formatBRL(entry.paid_total)}).`;
+    if (!due) errs["due"] = "Informe a data de vencimento.";
+    if (!categoryId) errs["category"] = "Escolha uma categoria.";
+    if (frequency !== "nenhuma" && endDate && endDate < due) errs["end"] = "A data final deve ser depois da inicial.";
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
@@ -174,31 +174,31 @@ export function EntryFormDialog({ open, onOpenChange, entry, defaultKind = "paga
 
           <div className="space-y-1.5">
             <Label htmlFor="desc">Descrição</Label>
-            <Input id="desc" maxLength={140} value={description} onChange={(e) => setDescription(e.target.value)} aria-invalid={!!errors.description} />
-            {errors.description && <p className="text-xs text-danger">{errors.description}</p>}
+            <Input id="desc" maxLength={140} value={description} onChange={(e) => setDescription(e.target.value)} aria-invalid={!!errors["description"]} />
+            {errors["description"] && <p className="text-xs text-danger">{errors["description"]}</p>}
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="amt">Valor (R$)</Label>
-              <Input id="amt" inputMode="decimal" placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} aria-invalid={!!errors.amount} />
-              {errors.amount && <p className="text-xs text-danger">{errors.amount}</p>}
+              <Input id="amt" inputMode="decimal" placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} aria-invalid={!!errors["amount"]} />
+              {errors["amount"] && <p className="text-xs text-danger">{errors["amount"]}</p>}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="due">{frequency !== "nenhuma" ? "Primeiro vencimento" : "Vencimento"}</Label>
-              <Input id="due" type="date" value={due} onChange={(e) => setDue(e.target.value)} disabled={recurring && scope === "future"} aria-invalid={!!errors.due} />
-              {errors.due && <p className="text-xs text-danger">{errors.due}</p>}
+              <Input id="due" type="date" value={due} onChange={(e) => setDue(e.target.value)} disabled={recurring && scope === "future"} aria-invalid={!!errors["due"]} />
+              {errors["due"] && <p className="text-xs text-danger">{errors["due"]}</p>}
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="cat">Categoria</Label>
               <Select value={categoryId} onValueChange={setCategoryId}>
-                <SelectTrigger id="cat" aria-invalid={!!errors.category}><SelectValue placeholder="Selecione" /></SelectTrigger>
+                <SelectTrigger id="cat" aria-invalid={!!errors["category"]}><SelectValue placeholder="Selecione" /></SelectTrigger>
                 <SelectContent>
                   {kindCategories.map((c) => <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>)}
                 </SelectContent>
               </Select>
-              {errors.category && <p className="text-xs text-danger">{errors.category}</p>}
+              {errors["category"] && <p className="text-xs text-danger">{errors["category"]}</p>}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="ct">Pessoa ou empresa (opcional)</Label>
@@ -227,8 +227,8 @@ export function EntryFormDialog({ open, onOpenChange, entry, defaultKind = "paga
               {frequency !== "nenhuma" && (
                 <div className="space-y-1.5">
                   <Label htmlFor="end">Data final (opcional)</Label>
-                  <Input id="end" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} aria-invalid={!!errors.end} />
-                  {errors.end && <p className="text-xs text-danger">{errors.end}</p>}
+                  <Input id="end" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} aria-invalid={!!errors["end"]} />
+                  {errors["end"] && <p className="text-xs text-danger">{errors["end"]}</p>}
                 </div>
               )}
             </div>
