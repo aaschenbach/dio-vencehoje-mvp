@@ -2,17 +2,22 @@
 // so no UTC shift can move a due date.
 
 export function todaySP(now: Date = new Date()): string {
-  const parts = new Intl.DateTimeFormat("en-CA", {
+  const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/Sao_Paulo",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-  }).format(now);
-  return parts; // en-CA yields YYYY-MM-DD
+  }).formatToParts(now);
+  const get = (type: "year" | "month" | "day") => {
+    const value = parts.find((part) => part.type === type)?.value;
+    if (!value) throw new Error("Componente de data não encontrado: " + type);
+    return value;
+  };
+  return [get("year"), get("month"), get("day")].join("-");
 }
 
 function toUTC(iso: string): Date {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = iso.split("-").map(Number);
   return new Date(Date.UTC(y, m - 1, d));
 }
 function fromUTC(d: Date): string {
@@ -31,7 +36,7 @@ export function lastDayOfMonth(year: number, month1: number): number {
 
 /** Adds months, clamping to the last valid day (Jan 31 + 1 → Feb 28/29). */
 export function addMonthsClamped(iso: string, months: number): string {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = iso.split("-").map(Number);
   const total = y * 12 + (m - 1) + months;
   const ny = Math.floor(total / 12);
   const nm = (total % 12) + 1;
@@ -43,13 +48,13 @@ export function startOfMonth(iso: string): string {
   return iso.slice(0, 8) + "01";
 }
 export function endOfMonth(iso: string): string {
-  const [y, m] = iso.split("-").map(Number);
+  const [y = 0, m = 1] = iso.split("-").map(Number);
   return `${iso.slice(0, 8)}${String(lastDayOfMonth(y, m)).padStart(2, "0")}`;
 }
 
 export function formatDate(iso: string | null | undefined): string {
   if (!iso) return "—";
-  const [y, m, d] = iso.slice(0, 10).split("-");
+  const [y = "", m = "", d = ""] = iso.slice(0, 10).split("-");
   return `${d}/${m}/${y}`;
 }
 
