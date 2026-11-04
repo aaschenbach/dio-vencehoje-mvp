@@ -39,7 +39,7 @@ function Agenda() {
     return m;
   }, [entries]);
 
-  const [y, mo] = month.split("-").map(Number);
+  const [y = 0, mo = 1] = month.split("-").map(Number);
   const firstDow = new Date(Date.UTC(y, mo - 1, 1)).getUTCDay();
   const days: (string | null)[] = [...Array(firstDow).fill(null)];
   for (let d = month; d <= to; d = addDays(d, 1)) days.push(d);
@@ -104,10 +104,10 @@ function Agenda() {
             </div>
           )}
           <h2 className="mb-3 font-bold">{selected ? `Vencimentos em ${formatDate(selected)}` : "Todos os vencimentos do mês"}</h2>
-          {shown.length === 0 ? <EmptyState title="Nenhum vencimento">Nada para esta seleção.</EmptyState> : <EntryList entries={shown} categories={categories} onOpen={setOpenId} />}
+          {shown.length === 0 ? <EmptyState title="Nenhum vencimento">Nada para esta seleção.</EmptyState> : <EntryList entries={shown} categories={categories ?? []} onOpen={setOpenId} />}
         </>
       )}
-      <EntryFormDialog open={newOpen} onOpenChange={setNewOpen} defaultDate={selected ?? undefined} />
+      <EntryFormDialog open={newOpen} onOpenChange={setNewOpen} defaultDate={selected ?? today} />
       <EntryDetailSheet entryId={openId} onClose={() => setOpenId(null)} />
     </>
   );
