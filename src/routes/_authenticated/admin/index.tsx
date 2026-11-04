@@ -17,8 +17,8 @@ function Overview() {
   if (isLoading) return <Loading />;
   if (error || !data) return <ErrorState onRetry={() => refetch()} />;
   const items = [
-    ["Leads", data.leads], ["Cadastros", data.signups], ["Usuários ativos (30 dias)", data.active_users],
-    ["Clientes com assinatura (teste/ativa)", data.subscribers], ["Leads convertidos", data.converted],
+    ["Leads", data["leads"] ?? 0], ["Cadastros", data["signups"] ?? 0], ["Usuários ativos (30 dias)", data["active_users"] ?? 0],
+    ["Clientes com assinatura (teste/ativa)", data["subscribers"] ?? 0], ["Leads convertidos", data["converted"] ?? 0],
   ] as const;
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
