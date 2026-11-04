@@ -22,9 +22,9 @@ function Settings() {
   async function save(e: React.FormEvent) {
     e.preventDefault();
     const digits = wa.replace(/\D/g, "");
-    if (digits && (digits.length < 12 || digits.length > 13)) return toast.error("Use o formato internacional: 55 + DDD + número.");
+    if (digits && (digits.length < 12 || digits.length > 13)) return void toast.error("Use o formato internacional: 55 + DDD + número.");
     const { error } = await supabase.from("app_settings").update({ value: digits || null }).eq("key", "whatsapp_number");
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success(digits ? "WhatsApp comercial salvo." : "WhatsApp desativado.");
     qc.invalidateQueries();
   }
