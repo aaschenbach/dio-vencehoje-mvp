@@ -2,7 +2,7 @@
 
 Aplicação web em português brasileiro para organizar **contas a pagar e a receber**, vencimentos, baixas parciais e recorrências. Projeto de aprendizagem e validação de produto; **não é um banco, não movimenta dinheiro e não executa cobranças**.
 
-> **Status em 04/11/2026:** MVP de estudo da DIO concluído e publicado no Lovable, com testes funcionais relatados como aprovados e validação automatizada de TypeScript, testes e build. Não há operação comercial ou cobranças reais. As capturas da aplicação foram fornecidas e preparadas com dados pessoais ocultados; a publicação das imagens no repositório está pendente.
+> **Status em 04/11/2026:** MVP de estudo da DIO concluído e publicado no Lovable, com testes funcionais relatados como aprovados e validação automatizada de TypeScript, testes e build. Não há operação comercial ou cobranças reais. As 13 capturas reais da aplicação foram publicadas em `docs/screenshots/`, conforme commit de upload `37d8725`.
 
 ## Entrega do desafio DIO — projeto de estudo
 
@@ -11,7 +11,7 @@ Aplicação web em português brasileiro para organizar **contas a pagar e a rec
 
 **Aplicação publicada no Lovable:** [https://vencehoje.lovable.app](https://vencehoje.lovable.app) (endereço oficial informado pelo responsável pelo projeto; acesso externo não pôde ser confirmado automaticamente nesta revisão). **Pré-visualização de desenvolvimento:** [abrir preview](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app). [Editor do projeto](https://lovable.dev/projects/571e03e9-a4eb-42c9-99cc-707359e4d369).
 
-**Evidências visuais:** foram recebidas e preparadas 13 capturas reais em dispositivo móvel, incluindo landing, login, recuperação de senha, painel, agenda, lançamentos, lembretes, contatos, categorias e administração. Consulte o [catálogo e instruções para inclusão dos arquivos](docs/screenshots/README.md). A galeria visual só será ativada após a inclusão dos PNGs no GitHub.
+**Evidências visuais:** 13 capturas reais em dispositivo móvel estão disponíveis na [galeria de telas](docs/screenshots/README.md). Os arquivos foram enviados ao repositório no [commit 37d8725](https://github.com/aaschenbach/dio-vencehoje-mvp/commit/37d87252080f5a6d9ad7638441c567cc43d447f0).
 
 **Entregáveis do desafio:**
 - [Checklist de entrega e evidências](docs/ENTREGA_DIO.md)
@@ -25,6 +25,20 @@ Aplicação web em português brasileiro para organizar **contas a pagar e a rec
 **Aprendizados técnicos:** regras financeiras e recorrências exigem validação transacional e tratamento de exceções; controle de acesso deve atuar no banco, não apenas nas telas; testes de compilação e CI não substituem testes funcionais; integrar o Lovable com GitHub facilita manutenção e documentação.
 
 **Limites do experimento:** assinatura administrativa é manual; WhatsApp é um link; lembretes não disparam mensagens externas; sem banco, Pix, boleto, emissão fiscal, IA ou integrações de pagamento. Acesso de um segundo usuário comum ainda não foi revalidado no ambiente final.
+
+## Capturas de tela
+
+Exemplos reais do VenceHoje em dispositivo móvel (dados demonstrativos):
+
+| Landing | Painel | Agenda |
+| --- | --- | --- |
+| ![Landing](docs/screenshots/01-landing.png) | ![Painel](docs/screenshots/05-painel.png) | ![Agenda](docs/screenshots/06-agenda.png) |
+
+| Lançamentos | Categorias | Administração |
+| --- | --- | --- |
+| ![Novo lançamento](docs/screenshots/07-novo-lancamento.png) | ![Categorias](docs/screenshots/10-categorias.png) | ![Administração](docs/screenshots/11-admin-visao-geral.png) |
+
+A galeria completa, com login, recuperação de senha, lembretes, contatos, clientes e assinaturas, está em [docs/screenshots/](docs/screenshots/README.md).
 
 ## O que faz
 
