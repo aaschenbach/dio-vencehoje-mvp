@@ -15,21 +15,17 @@
 | TAM, SAM, SOM e tese | Documentados como **hipóteses** | [Negócio](NEGOCIO.md) |
 | Mega prompt e alterações | Escopo reconstruído, **não transcrição literal** | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
 | Partes manuais/fora do MVP | Documentadas | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
-| Screenshots reais do aplicativo | **Não capturados**; dependem de acesso visual autenticado | Orientações abaixo |
+| Screenshots reais do aplicativo | **13 capturas recebidas e higienizadas**; arquivos PNG preparados para upload | [Catálogo das capturas](screenshots/README.md) |
 | Pré-visualização do aplicativo | **URL informada:** [abrir VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app); acesso anônimo não verificado | Link fornecido pelo responsável |
 | Link da aplicação publicada | **Informado como publicado:** [vencehoje.lovable.app](https://vencehoje.lovable.app); acesso externo não confirmado automaticamente | Endereço fornecido pelo responsável |
 
-## Evidências visuais a capturar no Lovable
+## Capturas fornecidas e organizadas
 
-Não usar montagens ou prints inventados como prova de funcionamento.
+Foram recebidas 13 capturas autênticas das telas de landing, login, recuperação de senha, alteração de senha, painel, agenda, lançamento, lembretes, contatos, categorias e administração (visão geral, clientes e assinaturas). A fotografia de pessoas enviada por engano não integra o material.
 
-1. Landing page, destacando proposta de valor e formulário de interesse, sem dados pessoais.
-2. Painel com dados **fictícios** representando contas a pagar e receber.
-3. Tela de lançamentos com uma baixa parcial e uma quitação.
-4. Agenda com duas ou mais ocorrências recorrentes.
-5. Administração de leads/assinaturas manuais, com nomes e e-mails fictícios.
+Foram preparados PNGs recortados, com os e-mails das telas administrativas ocultados. A integração do GitHub disponível nesta conversa só permite **gravações de texto**, não envio direto dos binários das imagens: o pacote `vencehoje_capturas_DIO.zip` está disponível como artefato da conversa e precisa ser descompactado e enviado à pasta `docs/screenshots/` do repositório. Consulte [o índice completo](screenshots/README.md). A galeria Markdown será incluída após confirmar os arquivos online.
 
-Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-painel.png`, `03-lancamentos.png`, `04-agenda.png`, `05-admin.png`. Adicionar links no README **apenas depois dos arquivos estarem realmente presentes**.
+Esta é uma pendência **de upload**, não de nova captura de telas.
 
 ## Endereço publicado e pré-visualização
 
@@ -41,13 +37,10 @@ Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-paine
 
 ## Publicação para fins de entrega
 
-1. No editor Lovable, abrir o projeto VenceHoje e usar a opção **Publish**.
-2. Selecionar o endereço público oferecido pelo Lovable e confirmar publicação.
-3. Abrir a URL em uma janela anônima, verificando landing, links e eventual necessidade de login nas áreas privadas.
-4. O endereço publicado já foi incluído no README; confirmar que a URL `vencehoje.lovable.app` abre em janela anônima. Não confundir com o editor `lovable.dev/projects/...`.
-5. No GitHub, em **Settings → General → Danger Zone → Change repository visibility**, selecionar **Public** e confirmar, **após conferir segredos e dados privados no repositório e histórico**.
-6. Acessar o GitHub deslogado e confirmar que o README, o Canvas e o código estão visíveis. Revogar/rotacionar qualquer credencial que tenha sido exposta anteriormente.
-7. Preencher o formulário de entrega da DIO com a URL da aplicação e do GitHub.
+1. Aplicativo publicado: [https://vencehoje.lovable.app](https://vencehoje.lovable.app), conforme URL e capturas fornecidas pelo responsável.
+2. Upload das imagens preparadas para `docs/screenshots/` e conferência dos links.
+3. Alterar a visibilidade do repositório GitHub de **Private** para **Public** quando o GitHub liberar a operação de visibilidade em andamento.
+4. Testar ambos os links sem autenticação e submeter à DIO.
 
 **Nota:** publicar o aplicativo torna uma superfície de autenticação e armazenamento acessível pela Internet. Mesmo em exercício de estudo, não usar dados financeiros reais nem expor segredos.
 
@@ -55,4 +48,4 @@ Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-paine
 
 O repositório contém documentação do estudo; minutas legais e checklists de conformidade são **exercícios técnicos**, não aprovações para negócio real.
 
-A URL oficial de publicação foi informada e documentada. A entrega ainda depende de confirmar acesso público, visibilidade do GitHub e capturas autênticas.
+A URL de publicação foi informada e as capturas autênticas foram recebidas e higienizadas. Para finalizar a entrega pública, resta enviar os arquivos PNG preparados ao GitHub e alterar a visibilidade do repositório para público, com verificação deslogada.
