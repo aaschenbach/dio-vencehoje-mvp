@@ -38,14 +38,14 @@ function Subs() {
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
-    if (!form?.user_id) return toast.error("Escolha o cliente.");
+    if (!form?.user_id) return void toast.error("Escolha o cliente.");
     const amount = form.amount ? parseBRLInput(form.amount) : null;
-    if (form.amount && !amount) return toast.error("Valor inválido.");
+    if (form.amount && !amount) return void toast.error("Valor inválido.");
     setBusy(true);
     const payload = { user_id: form.user_id, plan: form.plan || "Mensal", status: form.status, start_date: form.start_date, end_date: form.end_date || null, amount: amount ? Number(amount) : null, notes: form.notes.trim() || null };
     const { error } = form.id ? await supabase.from("subscriptions").update(payload).eq("id", form.id) : await supabase.from("subscriptions").insert(payload);
     setBusy(false);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Assinatura salva.");
     setForm(null);
     qc.invalidateQueries();
