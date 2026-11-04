@@ -1,6 +1,7 @@
 name: Validate MVP
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -17,6 +18,8 @@ jobs:
       - name: TypeScript
         run: bunx tsc --noEmit
       - name: Unit tests
+        if: always()
         run: bun run test
       - name: Build
+        if: always()
         run: bun run build
