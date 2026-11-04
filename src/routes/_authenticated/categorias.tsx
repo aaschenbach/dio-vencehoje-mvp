@@ -24,21 +24,21 @@ function Column({ kind, items }: { kind: "pagar" | "receber"; items: Category[] 
     e.preventDefault();
     if (!name.trim()) return;
     const { error } = await supabase.from("categories").insert({ workspace_id: await getMyWorkspaceId(), kind, name: name.trim() });
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     setName("");
     qc.invalidateQueries();
   }
   async function rename() {
     if (!editing?.name.trim()) return;
     const { error } = await supabase.from("categories").update({ name: editing.name.trim() }).eq("id", editing.id);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Categoria renomeada. Os lançamentos continuam ligados a ela.");
     setEditing(null);
     qc.invalidateQueries();
   }
   async function toggle(c: Category) {
     const { error } = await supabase.from("categories").update({ active: !c.active }).eq("id", c.id);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     qc.invalidateQueries();
   }
 
