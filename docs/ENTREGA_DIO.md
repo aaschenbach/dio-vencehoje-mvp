@@ -16,7 +16,8 @@
 | Mega prompt e alterações | Escopo reconstruído, **não transcrição literal** | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
 | Partes manuais/fora do MVP | Documentadas | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
 | Screenshots reais do aplicativo | **Não capturados**; dependem de acesso visual autenticado | Orientações abaixo |
-| Link da aplicação publicada | **Não confirmado**; link do editor não é URL pública | Orientações abaixo |
+| Pré-visualização do aplicativo | **URL informada:** [abrir VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app); acesso anônimo não verificado | Link fornecido pelo responsável |
+| Link da aplicação publicada | **Não confirmado** como publicação definitiva | Conferir no Lovable e em janela anônima |
 
 ## Evidências visuais a capturar no Lovable
 
@@ -29,6 +30,10 @@ Não usar montagens ou prints inventados como prova de funcionamento.
 5. Administração de leads/assinaturas manuais, com nomes e e-mails fictícios.
 
 Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-painel.png`, `03-lancamentos.png`, `04-agenda.png`, `05-admin.png`. Adicionar links no README **apenas depois dos arquivos estarem realmente presentes**.
+
+## Link de pré-visualização informado
+
+[Visualizar o VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app) — URL com prefixo `id-preview--`, fornecida pelo responsável, ainda não comprovada como endereço público definitivo. Testar acesso deslogado antes de apresentá-la como URL publicada.
 
 ## Publicação para fins de entrega
 
