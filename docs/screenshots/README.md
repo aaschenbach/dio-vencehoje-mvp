@@ -2,26 +2,24 @@
 
 Projeto de estudo da DIO. **Origem:** capturas reais do aplicativo em um celular, fornecidas pelo responsável em 04/11/2026. A fotografia de pessoas enviada junto foi descartada por não corresponder ao aplicativo.
 
-## Galeria planejada
+## Galeria publicada
 
 | Captura | Arquivo |
 | --- | --- |
-| Landing page | `01-landing.png` |
-| Login | `02-login.png` |
-| Recuperação de senha | `03-recuperar-senha.png` |
-| Nova senha | `04-nova-senha.png` |
-| Painel financeiro | `05-painel.png` |
-| Agenda de vencimentos | `06-agenda.png` |
-| Formulário de lançamento | `07-novo-lancamento.png` |
-| Lembretes | `08-lembretes.png` |
-| Contatos | `09-contatos.png` |
-| Categorias | `10-categorias.png` |
-| Administração: visão geral | `11-admin-visao-geral.png` |
-| Administração: clientes | `12-admin-clientes.png` |
-| Administração: assinaturas | `13-admin-assinaturas.png` |
+| Landing page | [Visualizar](./01-landing.png) |
+| Login | [Visualizar](./02-login.png) |
+| Recuperação de senha | [Visualizar](./03-recuperar-senha.png) |
+| Nova senha | [Visualizar](./04-nova-senha.png) |
+| Painel financeiro | [Visualizar](./05-painel.png) |
+| Agenda de vencimentos | [Visualizar](./06-agenda.png) |
+| Formulário de lançamento | [Visualizar](./07-novo-lancamento.png) |
+| Lembretes | [Visualizar](./08-lembretes.png) |
+| Contatos | [Visualizar](./09-contatos.png) |
+| Categorias | [Visualizar](./10-categorias.png) |
+| Administração: visão geral | [Visualizar](./11-admin-visao-geral.png) |
+| Administração: clientes | [Visualizar](./12-admin-clientes.png) |
+| Administração: assinaturas | [Visualizar](./13-admin-assinaturas.png) |
 
 As versões preparadas para publicação foram recortadas para remover as barras do aparelho e tiveram **e-mails de clientes ocultados**. A interface do Lovable é mostrada apenas como evidência de estudo.
 
-**Disponibilidade:** os binários PNG não são enviados por esta integração de edição textual do GitHub. As 13 imagens estão no pacote `vencehoje_capturas_DIO.zip` disponibilizado na conversa. Para completar a galeria, descompacte o arquivo e carregue os PNGs nesta pasta. Não divulgar as capturas originais com e-mails pessoais.
-
-Após o upload dos arquivos, os links e imagens do [README principal](../../README.md) poderão ser exibidos normalmente.
+**Disponibilidade confirmada:** os 13 PNGs foram enviados ao repositório no [commit 37d8725](https://github.com/aaschenbach/dio-vencehoje-mvp/commit/37d87252080f5a6d9ad7638441c567cc43d447f0). O [README principal](../../README.md) exibe uma seleção das capturas.
