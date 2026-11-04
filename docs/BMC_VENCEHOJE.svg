@@ -1,1 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="t d"><title id="t">Business Model Canvas do VenceHoje</title><desc id="d">Canvas com nove blocos de hipóteses do projeto de estudo VenceHoje, atualizado em novembro de 2026.</desc><rect width="1600" height="930" fill="#F6F8FA"/><rect width="1600" height="125" fill="#12304B"/><text x="42" y="59" font-family="Arial,sans-serif" font-size="35" font-weight="700" fill="#FFFFFF">VenceHoje</text><text x="43" y="91" font-family="Arial,sans-serif" font-size="19" fill="#DCE8EF">BUSINESS MODEL CANVAS  ·  Projeto de estudo / hipóteses</text><text x="1558" y="68" font-family="Arial,sans-serif" font-size="17" text-anchor="end" fill="#DCE8EF">04 nov 2026</text><rect x="40" y="160" width="296" height="505" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="59" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">PARCERIAS-CHAVE</text><line x1="58" y1="210" x2="318" y2="210" stroke="#D7E2E8" stroke-width="2"/><circle cx="63" cy="238" r="4" fill="#059B78"/><text x="76" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Lovable Cloud / Supabase</text><circle cx="63" cy="305" r="4" fill="#059B78"/><text x="76" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">GitHub e ferramentas de dev</text><circle cx="63" cy="372" r="4" fill="#059B78"/><text x="76" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Canais de aquisição futuros</text><circle cx="63" cy="439" r="4" fill="#059B78"/><text x="76" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Parceiros de indicação (hipótese)</text><rect x="344" y="160" width="296" height="246" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="363" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">ATIVIDADES-CHAVE</text><line x1="362" y1="210" x2="622" y2="210" stroke="#D7E2E8" stroke-width="2"/><circle cx="367" cy="238" r="4" fill="#059B78"/><text x="380" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Desenvolver e testar o MVP</text><circle cx="367" cy="275" r="4" fill="#059B78"/><text x="380" y="281" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Manter dados e segurança</text><circle cx="367" cy="312" r="4" fill="#059B78"/><text x="380" y="318" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Melhorar usabilidade</text><circle cx="367" cy="349" r="4" fill="#059B78"/><text x="380" y="355" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Acompanhar uso e feedback</text><rect x="344" y="414" width="296" height="251" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="363" y="450" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">RECURSOS-CHAVE</text><line x1="362" y1="464" x2="622" y2="464" stroke="#D7E2E8" stroke-width="2"/><circle cx="367" cy="492" r="4" fill="#059B78"/><text x="380" y="498" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Código e infraestrutura</text><circle cx="367" cy="529" r="4" fill="#059B78"/><text x="380" y="535" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Interface e regras financeiras</text><circle cx="367" cy="566" r="4" fill="#059B78"/><text x="380" y="572" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Conhecimento técnico</text><circle cx="367" cy="603" r="4" fill="#059B78"/><text x="380" y="609" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Identidade VenceHoje</text><rect x="648" y="160" width="296" height="505" rx="14" fill="#E6F5EF" stroke="#059B78" stroke-width="3"/><text x="667" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">PROPOSTA DE VALOR</text><line x1="666" y1="210" x2="926" y2="210" stroke="#D7E2E8" stroke-width="2"/><circle cx="671" cy="238" r="4" fill="#059B78"/><text x="684" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Prazos e valores sob controle</text><circle cx="671" cy="305" r="4" fill="#059B78"/><text x="684" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Contas a pagar e a receber</text><circle cx="671" cy="372" r="4" fill="#059B78"/><text x="684" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Baixas parciais e recorrências</text><circle cx="671" cy="439" r="4" fill="#059B78"/><text x="684" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Agenda e visão de pendências</text><circle cx="671" cy="506" r="4" fill="#059B78"/><text x="684" y="512" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Simplicidade, sem ERP completo</text><rect x="952" y="160" width="296" height="246" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="971" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">RELACIONAMENTO</text><line x1="970" y1="210" x2="1230" y2="210" stroke="#D7E2E8" stroke-width="2"/><circle cx="975" cy="238" r="4" fill="#059B78"/><text x="988" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Autosserviço</text><circle cx="975" cy="275" r="4" fill="#059B78"/><text x="988" y="281" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Onboarding simples</text><circle cx="975" cy="312" r="4" fill="#059B78"/><text x="988" y="318" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Contato comercial opcional</text><circle cx="975" cy="349" r="4" fill="#059B78"/><text x="988" y="355" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Suporte em evolução</text><rect x="952" y="414" width="296" height="251" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="971" y="450" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">CANAIS</text><line x1="970" y1="464" x2="1230" y2="464" stroke="#D7E2E8" stroke-width="2"/><circle cx="975" cy="492" r="4" fill="#059B78"/><text x="988" y="498" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Landing page</text><circle cx="975" cy="529" r="4" fill="#059B78"/><text x="988" y="535" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Indicações e redes sociais</text><circle cx="975" cy="566" r="4" fill="#059B78"/><text x="988" y="572" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">WhatsApp opcional</text><circle cx="975" cy="603" r="4" fill="#059B78"/><text x="988" y="609" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Conteúdo digital</text><rect x="1256" y="160" width="304" height="505" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="1275" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">SEGMENTOS DE CLIENTES</text><line x1="1274" y1="210" x2="1542" y2="210" stroke="#D7E2E8" stroke-width="2"/><circle cx="1279" cy="238" r="4" fill="#059B78"/><text x="1292" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Pessoas físicas</text><circle cx="1279" cy="305" r="4" fill="#059B78"/><text x="1292" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Autônomos e profissionais</text><circle cx="1279" cy="372" r="4" fill="#059B78"/><text x="1292" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">MEIs</text><circle cx="1279" cy="439" r="4" fill="#059B78"/><text x="1292" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Pequenos negócios</text><circle cx="1279" cy="506" r="4" fill="#059B78"/><text x="1292" y="512" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Mercado ainda não validado</text><rect x="40" y="675" width="752" height="175" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="59" y="711" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">ESTRUTURA DE CUSTOS</text><line x1="58" y1="725" x2="774" y2="725" stroke="#D7E2E8" stroke-width="2"/><circle cx="63" cy="753" r="4" fill="#059B78"/><text x="76" y="759" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Infraestrutura e hospedagem</text><circle cx="63" cy="790" r="4" fill="#059B78"/><text x="76" y="796" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Desenvolvimento e manutenção</text><circle cx="63" cy="827" r="4" fill="#059B78"/><text x="76" y="833" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Suporte, divulgação e conformidade</text><rect x="800" y="675" width="760" height="175" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/><text x="819" y="711" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">FONTES DE RECEITA</text><line x1="818" y1="725" x2="1542" y2="725" stroke="#D7E2E8" stroke-width="2"/><circle cx="823" cy="753" r="4" fill="#059B78"/><text x="836" y="759" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Assinatura futura: R$ 15/mês (hipótese)</text><circle cx="823" cy="790" r="4" fill="#059B78"/><text x="836" y="796" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Durante o estudo: sem cobranças reais</text><circle cx="823" cy="827" r="4" fill="#059B78"/><text x="836" y="833" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Modelo ainda não validado</text><text x="40" y="891" font-family="Arial,sans-serif" font-size="16" fill="#506D7E">Hipóteses para aprendizagem. Nenhum dado de receita ou demanda foi comprovado.</text><text x="1560" y="891" font-family="Arial,sans-serif" font-size="16" fill="#506D7E" text-anchor="end">Fonte: docs/NEGOCIO.md</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="t d">
+<title id="t">Business Model Canvas do VenceHoje</title>
+<desc id="d">Canvas com nove blocos de hipóteses do projeto de estudo VenceHoje, atualizado em novembro de 2026.</desc>
+<rect width="1600" height="930" fill="#F6F8FA"/>
+<rect width="1600" height="125" fill="#12304B"/>
+<text x="42" y="59" font-family="Arial,sans-serif" font-size="35" font-weight="700" fill="#FFFFFF">VenceHoje</text>
+<text x="43" y="91" font-family="Arial,sans-serif" font-size="19" fill="#DCE8EF">BUSINESS MODEL CANVAS  ·  Projeto de estudo / hipóteses</text>
+<text x="1558" y="68" font-family="Arial,sans-serif" font-size="17" text-anchor="end" fill="#DCE8EF">04 nov 2026</text>
+<rect x="40" y="160" width="296" height="505" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="59" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">PARCERIAS-CHAVE</text>
+<line x1="58" y1="210" x2="318" y2="210" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="63" cy="238" r="4" fill="#059B78"/>
+<text x="76" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Lovable Cloud / Supabase</text>
+<circle cx="63" cy="305" r="4" fill="#059B78"/>
+<text x="76" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">GitHub e ferramentas de dev</text>
+<circle cx="63" cy="372" r="4" fill="#059B78"/>
+<text x="76" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Canais de aquisição futuros</text>
+<circle cx="63" cy="439" r="4" fill="#059B78"/>
+<text x="76" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Parceiros de indicação (hipótese)</text>
+<rect x="344" y="160" width="296" height="246" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="363" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">ATIVIDADES-CHAVE</text>
+<line x1="362" y1="210" x2="622" y2="210" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="367" cy="238" r="4" fill="#059B78"/>
+<text x="380" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Desenvolver e testar o MVP</text>
+<circle cx="367" cy="275" r="4" fill="#059B78"/>
+<text x="380" y="281" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Manter dados e segurança</text>
+<circle cx="367" cy="312" r="4" fill="#059B78"/>
+<text x="380" y="318" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Melhorar usabilidade</text>
+<circle cx="367" cy="349" r="4" fill="#059B78"/>
+<text x="380" y="355" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Acompanhar uso e feedback</text>
+<rect x="344" y="414" width="296" height="251" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="363" y="450" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">RECURSOS-CHAVE</text>
+<line x1="362" y1="464" x2="622" y2="464" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="367" cy="492" r="4" fill="#059B78"/>
+<text x="380" y="498" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Código e infraestrutura</text>
+<circle cx="367" cy="529" r="4" fill="#059B78"/>
+<text x="380" y="535" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Interface e regras financeiras</text>
+<circle cx="367" cy="566" r="4" fill="#059B78"/>
+<text x="380" y="572" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Conhecimento técnico</text>
+<circle cx="367" cy="603" r="4" fill="#059B78"/>
+<text x="380" y="609" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Identidade VenceHoje</text>
+<rect x="648" y="160" width="296" height="505" rx="14" fill="#E6F5EF" stroke="#059B78" stroke-width="3"/>
+<text x="667" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">PROPOSTA DE VALOR</text>
+<line x1="666" y1="210" x2="926" y2="210" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="671" cy="238" r="4" fill="#059B78"/>
+<text x="684" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Prazos e valores sob controle</text>
+<circle cx="671" cy="305" r="4" fill="#059B78"/>
+<text x="684" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Contas a pagar e a receber</text>
+<circle cx="671" cy="372" r="4" fill="#059B78"/>
+<text x="684" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Baixas parciais e recorrências</text>
+<circle cx="671" cy="439" r="4" fill="#059B78"/>
+<text x="684" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Agenda e visão de pendências</text>
+<circle cx="671" cy="506" r="4" fill="#059B78"/>
+<text x="684" y="512" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Simplicidade, sem ERP completo</text>
+<rect x="952" y="160" width="296" height="246" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="971" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">RELACIONAMENTO</text>
+<line x1="970" y1="210" x2="1230" y2="210" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="975" cy="238" r="4" fill="#059B78"/>
+<text x="988" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Autosserviço</text>
+<circle cx="975" cy="275" r="4" fill="#059B78"/>
+<text x="988" y="281" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Onboarding simples</text>
+<circle cx="975" cy="312" r="4" fill="#059B78"/>
+<text x="988" y="318" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Contato comercial opcional</text>
+<circle cx="975" cy="349" r="4" fill="#059B78"/>
+<text x="988" y="355" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Suporte em evolução</text>
+<rect x="952" y="414" width="296" height="251" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="971" y="450" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">CANAIS</text>
+<line x1="970" y1="464" x2="1230" y2="464" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="975" cy="492" r="4" fill="#059B78"/>
+<text x="988" y="498" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Landing page</text>
+<circle cx="975" cy="529" r="4" fill="#059B78"/>
+<text x="988" y="535" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Indicações e redes sociais</text>
+<circle cx="975" cy="566" r="4" fill="#059B78"/>
+<text x="988" y="572" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">WhatsApp opcional</text>
+<circle cx="975" cy="603" r="4" fill="#059B78"/>
+<text x="988" y="609" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Conteúdo digital</text>
+<rect x="1256" y="160" width="304" height="505" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="1275" y="196" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">SEGMENTOS DE CLIENTES</text>
+<line x1="1274" y1="210" x2="1542" y2="210" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="1279" cy="238" r="4" fill="#059B78"/>
+<text x="1292" y="244" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Pessoas físicas</text>
+<circle cx="1279" cy="305" r="4" fill="#059B78"/>
+<text x="1292" y="311" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Autônomos e profissionais</text>
+<circle cx="1279" cy="372" r="4" fill="#059B78"/>
+<text x="1292" y="378" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">MEIs</text>
+<circle cx="1279" cy="439" r="4" fill="#059B78"/>
+<text x="1292" y="445" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Pequenos negócios</text>
+<circle cx="1279" cy="506" r="4" fill="#059B78"/>
+<text x="1292" y="512" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Mercado ainda não validado</text>
+<rect x="40" y="675" width="752" height="175" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="59" y="711" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">ESTRUTURA DE CUSTOS</text>
+<line x1="58" y1="725" x2="774" y2="725" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="63" cy="753" r="4" fill="#059B78"/>
+<text x="76" y="759" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Infraestrutura e hospedagem</text>
+<circle cx="63" cy="790" r="4" fill="#059B78"/>
+<text x="76" y="796" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Desenvolvimento e manutenção</text>
+<circle cx="63" cy="827" r="4" fill="#059B78"/>
+<text x="76" y="833" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Suporte, divulgação e conformidade</text>
+<rect x="800" y="675" width="760" height="175" rx="14" fill="#FFFFFF" stroke="#D7E2E8" stroke-width="2"/>
+<text x="819" y="711" font-family="Arial,sans-serif" font-size="18" fill="#12304B" font-weight="700">FONTES DE RECEITA</text>
+<line x1="818" y1="725" x2="1542" y2="725" stroke="#D7E2E8" stroke-width="2"/>
+<circle cx="823" cy="753" r="4" fill="#059B78"/>
+<text x="836" y="759" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Assinatura futura: R$ 15/mês (hipótese)</text>
+<circle cx="823" cy="790" r="4" fill="#059B78"/>
+<text x="836" y="796" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Durante o estudo: sem cobranças reais</text>
+<circle cx="823" cy="827" r="4" fill="#059B78"/>
+<text x="836" y="833" font-family="Arial,sans-serif" font-size="16.5" fill="#203C4C">Modelo ainda não validado</text>
+<text x="40" y="891" font-family="Arial,sans-serif" font-size="16" fill="#506D7E">Hipóteses para aprendizagem. Nenhum dado de receita ou demanda foi comprovado.</text>
+<text x="1560" y="891" font-family="Arial,sans-serif" font-size="16" fill="#506D7E" text-anchor="end">Fonte: docs/NEGOCIO.md</text>
+</svg>
