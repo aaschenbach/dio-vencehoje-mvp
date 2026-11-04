@@ -95,20 +95,20 @@ function LeadDetail({ lead, onDone, onChange }: { lead: Lead; onDone: () => void
 
   async function setStatus(v: string) {
     const { error } = await supabase.from("leads").update({ status: v }).eq("id", lead.id);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     onChange();
   }
   async function addNote() {
     if (!note.trim()) return;
     const { data: u } = await supabase.auth.getUser();
-    const { error } = await supabase.from("commercial_notes").insert({ lead_id: lead.id, body: note.trim(), author_id: u.user?.id });
-    if (error) return toast.error(errorMessage(error));
+    const { error } = await supabase.from("commercial_notes").insert({ lead_id: lead.id, body: note.trim(), author_id: u.user?.id ?? null });
+    if (error) return void toast.error(errorMessage(error));
     setNote("");
     qc.invalidateQueries({ queryKey: ["lead-extra", lead.id] });
   }
   async function convert() {
     const { error } = await supabase.rpc("admin_convert_lead", { _lead_id: lead.id });
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Lead vinculado à conta cadastrada com o mesmo e-mail.");
     onChange();
   }
@@ -119,7 +119,7 @@ function LeadDetail({ lead, onDone, onChange }: { lead: Lead; onDone: () => void
       : await supabase.from("leads").delete().eq("id", lead.id);
     setBusy(false);
     setConfirm(null);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success(confirm === "anon" ? "Lead anonimizado." : "Lead excluído.");
     onDone();
   }
