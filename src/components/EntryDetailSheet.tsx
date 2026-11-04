@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { supabase } from "@/integrations/supabase/client";
-import { useCategories, useContacts, useEntry, type Settlement } from "@/lib/data";
+import { getMyWorkspaceId, useCategories, useContacts, useEntry, type Settlement } from "@/lib/data";
 import { formatDate, todaySP } from "@/lib/dates";
 import { centsToDecimal, formatBRL, parseBRLInput, toCents } from "@/lib/money";
 import { FREQUENCY_LABEL, type Frequency } from "@/lib/recurrence";
@@ -237,15 +237,26 @@ function SettlementDialog({
     if (toCents(v) > maxCents) return setError(`O valor máximo é ${formatBRL(centsToDecimal(maxCents))}.`);
     if (!date) return setError("Informe a data.");
     setBusy(true);
-    const payload = { amount: Number(v), paid_on: date, notes: notes.trim() || null };
-    const { error: err } = settlement
-      ? await supabase.from("settlements").update(payload).eq("id", settlement.id)
-      : await supabase.from("settlements").insert({ ...payload, entry_id: entryId, workspace_id: "00000000-0000-0000-0000-000000000000" });
-    setBusy(false);
-    if (err) return setError(errorMessage(err));
-    toast.success(settlement ? "Baixa corrigida." : "Baixa registrada.");
-    qc.invalidateQueries();
-    onOpenChange(false);
+    try {
+      const payload = { amount: Number(v), paid_on: date, notes: notes.trim() || null };
+      if (settlement) {
+        const { error } = await supabase.from("settlements").update(payload).eq("id", settlement.id);
+        if (error) throw error;
+      } else {
+        const workspaceId = await getMyWorkspaceId();
+        const { error } = await supabase.from("settlements").insert({
+          ...payload, entry_id: entryId, workspace_id: workspaceId,
+        });
+        if (error) throw error;
+      }
+      toast.success(settlement ? "Baixa corrigida." : "Baixa registrada.");
+      await qc.invalidateQueries();
+      onOpenChange(false);
+    } catch (err) {
+      setError(errorMessage(err));
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
