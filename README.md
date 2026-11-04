@@ -4,6 +4,26 @@ Aplicação web em português brasileiro para organizar **contas a pagar e a rec
 
 > **Estado em 04/11/2026:** implementação do MVP encerrada para fins internos, com ressalvas. O responsável relatou 21 cenários funcionais aprovados nas duas primeiras rodadas, além da conclusão dos testes administrativos. O GitHub Actions (TypeScript, testes e build) passou. **Não liberado comercialmente:** permanecem P1/P2, acesso funcional a uma segunda conta comum, textos legais definitivos, retenção e revisão de segurança.
 
+## Entrega do desafio DIO — projeto de estudo
+
+**Problema:** dificuldade de acompanhar prazos de pagamento/recebimento, baixas e contas recorrentes sem usar um ERP complexo.  
+**Solução proposta:** VenceHoje, aplicativo responsivo com lançamentos, agenda, painel e baixas parciais. **Finalidade exclusivamente educacional**, sem cobrança ou pagamentos reais.
+
+**Aplicação publicada:** ainda não há URL pública verificada; o [editor do Lovable](https://lovable.dev/projects/571e03e9-a4eb-42c9-99cc-707359e4d369) não substitui a URL de publicação.
+
+**Entregáveis do desafio:**
+- [Checklist de entrega e evidências](docs/ENTREGA_DIO.md)
+- [Business Model Canvas visual (SVG)](docs/BMC_VENCEHOJE.svg)
+- [Modelo de negócio, TAM/SAM/SOM hipotéticos e tese de validação](docs/NEGOCIO.md)
+- [Mega prompt reconstruído e evolução/correções](docs/MEGA_PROMPT_E_EVOLUCAO.md)
+- [Cenários funcionais e comprovações](docs/VALIDACAO.md)
+
+**Tese a validar:** uma experiência de controle financeiro simples, com contas a pagar/receber e recorrências em um só lugar, pode ajudar públicos que não precisam de um ERP. Esta é uma hipótese, não uma conclusão de pesquisa ou desempenho real.
+
+**Aprendizados técnicos:** regras financeiras e recorrências exigem validação transacional e tratamento de exceções; controle de acesso deve atuar no banco, não apenas nas telas; testes de compilação e CI não substituem testes funcionais; integrar o Lovable com GitHub facilita manutenção e documentação.
+
+**Limites do experimento:** assinatura administrativa é manual; WhatsApp é um link; lembretes não disparam mensagens externas; sem banco, Pix, boleto, emissão fiscal, IA ou integrações de pagamento. Acesso de um segundo usuário comum ainda não foi revalidado no ambiente final.
+
 ## O que faz
 
 - Cadastro, confirmação de e-mail, login, recuperação de senha e onboarding.
