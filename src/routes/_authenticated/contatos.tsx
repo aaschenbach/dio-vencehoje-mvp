@@ -27,7 +27,7 @@ function Contatos() {
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
-    if (!edit?.name?.trim()) return toast.error("Informe o nome.");
+    if (!edit?.name?.trim()) return void toast.error("Informe o nome.");
     setBusy(true);
     try {
       const payload = { name: edit.name.trim(), kind: edit.kind ?? "pessoa", email: edit.email?.trim() || null, phone: edit.phone?.trim() || null, notes: edit.notes?.trim() || null };
@@ -45,7 +45,7 @@ function Contatos() {
     setBusy(true);
     const { error } = await supabase.from("contacts").delete().eq("id", del!.id);
     setBusy(false);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Contato excluído. Os lançamentos ligados a ele foram mantidos.");
     setDel(null);
     qc.invalidateQueries();
