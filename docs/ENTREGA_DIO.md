@@ -17,7 +17,7 @@
 | Partes manuais/fora do MVP | Documentadas | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
 | Screenshots reais do aplicativo | **Não capturados**; dependem de acesso visual autenticado | Orientações abaixo |
 | Pré-visualização do aplicativo | **URL informada:** [abrir VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app); acesso anônimo não verificado | Link fornecido pelo responsável |
-| Link da aplicação publicada | **Não confirmado** como publicação definitiva | Conferir no Lovable e em janela anônima |
+| Link da aplicação publicada | **Informado como publicado:** [vencehoje.lovable.app](https://vencehoje.lovable.app); acesso externo não confirmado automaticamente | Endereço fornecido pelo responsável |
 
 ## Evidências visuais a capturar no Lovable
 
@@ -31,7 +31,11 @@ Não usar montagens ou prints inventados como prova de funcionamento.
 
 Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-painel.png`, `03-lancamentos.png`, `04-agenda.png`, `05-admin.png`. Adicionar links no README **apenas depois dos arquivos estarem realmente presentes**.
 
-## Link de pré-visualização informado
+## Endereço publicado e pré-visualização
+
+**Publicado pelo Lovable (informado pelo responsável):** [https://vencehoje.lovable.app](https://vencehoje.lovable.app). O teste automático de acesso externo não pôde confirmar a resposta do site; recomenda-se validar a abertura em janela anônima.
+
+### Pré-visualização de desenvolvimento
 
 [Visualizar o VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app) — URL com prefixo `id-preview--`, fornecida pelo responsável, ainda não comprovada como endereço público definitivo. Testar acesso deslogado antes de apresentá-la como URL publicada.
 
@@ -40,7 +44,7 @@ Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-paine
 1. No editor Lovable, abrir o projeto VenceHoje e usar a opção **Publish**.
 2. Selecionar o endereço público oferecido pelo Lovable e confirmar publicação.
 3. Abrir a URL em uma janela anônima, verificando landing, links e eventual necessidade de login nas áreas privadas.
-4. Adicionar a **URL real** ao README; não confundir o link de edição `lovable.dev/projects/...` com o link público.
+4. O endereço publicado já foi incluído no README; confirmar que a URL `vencehoje.lovable.app` abre em janela anônima. Não confundir com o editor `lovable.dev/projects/...`.
 5. No GitHub, em **Settings → General → Danger Zone → Change repository visibility**, selecionar **Public** e confirmar, **após conferir segredos e dados privados no repositório e histórico**.
 6. Acessar o GitHub deslogado e confirmar que o README, o Canvas e o código estão visíveis. Revogar/rotacionar qualquer credencial que tenha sido exposta anteriormente.
 7. Preencher o formulário de entrega da DIO com a URL da aplicação e do GitHub.
@@ -51,4 +55,4 @@ Salvar imagens em `docs/screenshots/` com nomes como `01-landing.png`, `02-paine
 
 O repositório contém documentação do estudo; minutas legais e checklists de conformidade são **exercícios técnicos**, não aprovações para negócio real.
 
-O progresso não deve ser declarado 100% final enquanto a URL pública, visibilidade do GitHub e capturas autênticas não estiverem confirmadas.
+A URL oficial de publicação foi informada e documentada. A entrega ainda depende de confirmar acesso público, visibilidade do GitHub e capturas autênticas.
