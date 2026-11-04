@@ -9,7 +9,7 @@ Aplicação web em português brasileiro para organizar **contas a pagar e a rec
 **Problema:** dificuldade de acompanhar prazos de pagamento/recebimento, baixas e contas recorrentes sem usar um ERP complexo.  
 **Solução proposta:** VenceHoje, aplicativo responsivo com lançamentos, agenda, painel e baixas parciais. **Finalidade exclusivamente educacional**, sem cobrança ou pagamentos reais.
 
-**Pré-visualização do aplicativo:** [abrir VenceHoje no Lovable](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app) (URL informada pelo responsável pelo projeto). **Publicação definitiva:** não verificada; confirmar acesso em janela anônima e o endereço final pelo comando Publish do Lovable. [Editor do projeto](https://lovable.dev/projects/571e03e9-a4eb-42c9-99cc-707359e4d369).
+**Aplicação publicada no Lovable:** [https://vencehoje.lovable.app](https://vencehoje.lovable.app) (endereço oficial informado pelo responsável pelo projeto; acesso externo não pôde ser confirmado automaticamente nesta revisão). **Pré-visualização de desenvolvimento:** [abrir preview](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app). [Editor do projeto](https://lovable.dev/projects/571e03e9-a4eb-42c9-99cc-707359e4d369).
 
 **Entregáveis do desafio:**
 - [Checklist de entrega e evidências](docs/ENTREGA_DIO.md)
