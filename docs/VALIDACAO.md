@@ -54,23 +54,23 @@ O pipeline não valida por si só as regras RLS no ambiente remoto, a experiênc
 | S2 | Admin sem acesso a dados financeiros privados | Aprovado (conforme relato) |
 | S3 | Rotas privadas exigem login após logout | Aprovado |
 | S4 | Operações administrativas bloqueadas via API para usuário comum | Aprovado (conforme relato; método de teste não anexado) |
-| A4 | Criar/editar assinatura manual sem cobrança | Pendente |
-| A5 | Alterar situação de lead e adicionar observação | Pendente |
-| A6 | Anonimizar lead fictício | Pendente |
-| A7 | Configurar link de WhatsApp comercial | Pendente |
+| A4 | Criar/editar assinatura manual sem cobrança | Aprovado conforme relato posterior do usuário; sem evidência anexada |
+| A5 | Alterar situação de lead e adicionar observação | Aprovado conforme relato posterior do usuário; sem evidência anexada |
+| A6 | Anonimizar lead fictício | Aprovado conforme relato posterior do usuário; sem evidência anexada |
+| A7 | Configurar link de WhatsApp comercial | Aprovado conforme relato posterior do usuário; sem evidência anexada |
 | P1 | Consentimento comercial explicitamente autorizado | Pendente |
 | P2 | Recuperação de senha sem exposição de dados | Pendente (fluxo de confirmação de e-mail já testado na rodada 1) |
 | P3 | Inspeção de segredos no repositório/frontend | Aprovado conforme relato; repetir varredura na publicação |
-| P4 | README/documentação e links | Falhou na rodada, correção documental proposta em PR; exige nova verificação após merge |
+| P4 | README/documentação e links | PR #2 integrado à main; atualização realizada. Validação completa de links externos não documentada |
 | P5 | Política de Privacidade e Termos definitivos | Falhou; continuam provisórios |
 
-**Totais:** 21/21 cenários funcionais das rodadas 1–2 aprovados; na rodada 3, 5 aprovados, 6 pendentes e 2 falharam, conforme relato. Isso **não** significa que o MVP passou em auditoria final.
+**Totais atualizados:** 21/21 cenários das duas primeiras rodadas aprovados conforme relato. Na terceira rodada, 9 cenários (S1–S4, A4–A7 e P3) foram relatados como aprovados; P1 e P2 permanecem não executados, P4 recebeu correção documental integrada e P5 continua pendente. O uso de uma segunda conta comum ficou limitado pelo acesso por assinatura. Isso **não** significa aprovação em auditoria final.
 
 ## Verificações adicionais exigidas antes da publicação
 
 - Testar diretamente API e banco autenticados com dois usuários independentes, registrando requisições e resultados, para todas as operações críticas de RLS.
 - Confirmar no ambiente Lovable Cloud as políticas, `SECURITY DEFINER`/permissões, limites de função e gatilhos de baixas.
-- Executar A4–A7, P1–P3 e verificar a documentação após merge.
+- A4–A7 foram relatados como concluídos após a criação do administrador; **executar P1 e P2** com o roteiro em [TESTES_FINAIS.md](TESTES_FINAIS.md), e repetir P3 antes de publicar.
 - Substituir textos legais provisórios; definir retenção de leads e atendimento aos titulares.
 - Testar com valores fictícios, inclusive concorrência de baixas, exceções de recorrências e acesso negado.
 - Revalidar GitHub Actions no commit de `main` que será publicado.
@@ -81,3 +81,11 @@ O pipeline não valida por si só as regras RLS no ambiente remoto, a experiênc
 Em 04/11/2026 foram identificados erros de TypeScript impedindo o preview e um identificador de workspace fictício ao registrar baixas. As correções foram produzidas no PR [#1](https://github.com/aaschenbach/dio-vencehoje-mvp/pull/1), e o usuário confirmou posteriormente que a pré-visualização abriu e as operações básicas funcionaram.
 
 **Importante:** não usar dados financeiros reais enquanto a liberação e a revisão de privacidade não estiverem concluídas.
+
+## Encerramento interno e evidências posteriores
+
+- Em 04/11/2026, o responsável confirmou que criou o administrador e que os testes administrativos A4–A7 foram realizados. Não foram anexados registros individuais dos quatro testes.
+- Os PRs [#1](https://github.com/aaschenbach/dio-vencehoje-mvp/pull/1) e [#2](https://github.com/aaschenbach/dio-vencehoje-mvp/pull/2) estão integrados à `main`.
+- O responsável relatou que uma segunda conta comum não estava utilizável por exigência de assinatura. Essa limitação foi aceita para o **encerramento interno**, mas não para o piloto público.
+- Inspeção estática do código confirmou que P1 usa checkbox desmarcado por padrão e persiste a autorização no histórico; não substitui teste ponta a ponta. P2 contém chamada de recuperação do Supabase, mas o envio do e-mail e a redefinição não foram comprovados.
+- A distinção entre conclusão interna e liberação comercial está em [ENCERRAMENTO_MVP.md](ENCERRAMENTO_MVP.md).

@@ -11,11 +11,11 @@
 | Alta | Definir e implementar retenção, anonimização, exclusão e tratamento de solicitações dos titulares (incluindo leads e backups) | Responsável + implementação no backend | Pendente |
 | Alta | Substituir os textos provisórios em `src/routes/privacidade.tsx` e `src/routes/termos.tsx` por versões revisadas e datadas | Responsável + revisão jurídica | Pendente |
 | Alta | Confirmar políticas RLS, RPCs e integridade no ambiente que será publicado | Revisão técnica | Pendente de evidência reproduzível |
-| Média | Provisionar primeiro administrador de maneira segura | Operador autorizado do Lovable Cloud | Pendente |
-| Média | Testar cadastro/edição de assinatura manual, gestão/anonymização de leads, WhatsApp | Administrador de teste | Pendente |
-| Média | Validar consentimento comercial e recuperação de senha | Responsável pelos testes | Pendente |
+| Média | Provisionar primeiro administrador de maneira segura | Responsável pelo produto | Concluído conforme relato do usuário; auditoria de concessão não anexada |
+| Média | Testar cadastro/edição de assinatura manual, gestão/anonimização de leads, WhatsApp | Administrador de teste | A4–A7 concluídos conforme relato do usuário |
+| Alta | Validar consentimento comercial e recuperação de senha | Responsável pelos testes | P1/P2 não executados; roteiro em [TESTES_FINAIS.md](TESTES_FINAIS.md) |
 | Média | Revisar secrets, deploy, logs, backup e links do site; registrar versão/commit publicado | Revisão técnica | Pendente |
-| Média | Política de preço após validação gratuita e comunicação de mudança | Responsável comercial | Pendente |
+| Alta | Garantir acesso funcional de usuário comum na fase anunciada como gratuita | Responsável técnico/comercial | Segunda conta comum não utilizável por regra de assinatura, conforme relato |\n| Média | Política de preço após validação gratuita e comunicação de mudança | Responsável comercial | Pendente |
 
 ## Provisionamento do administrador
 
@@ -55,7 +55,7 @@ Os Termos e a Política de Privacidade devem ser revisados por profissional habi
 
 ## Testes antes de liberar
 
-1. Finalizar os casos A4–A7 e P1–P3 em [VALIDACAO.md](VALIDACAO.md).
+1. A4–A7 foram relatados como aprovados. **Executar P1 e P2** conforme [TESTES_FINAIS.md](TESTES_FINAIS.md), e revisar P3 no ambiente final.
 2. Confirmar que uma conta comum não acessa dados de outro workspace nem funções administrativas **diretamente pela API**.
 3. Confirmar, com conta admin, que consultas a baixas/lançamentos privados de clientes falham.
 4. Verificar exclusão/anonymização de leads, auditoria de baixas e persistência de exceções de recorrência.
@@ -70,3 +70,7 @@ O número do WhatsApp é opcional e deve ser informado pelo administrador. Assin
 ## Resultado esperado
 
 Quando todos os itens obrigatórios forem resolvidos, registrar uma decisão explícita de liberação, versão/commit, data, domínio, responsável e plano de reversão. Até lá, manter a aplicação restrita a testes com dados fictícios.
+
+## Situação do ciclo interno em 04/11/2026
+
+A implementação do MVP está documentada como **encerrada para fins internos, com ressalvas**, em [ENCERRAMENTO_MVP.md](ENCERRAMENTO_MVP.md). A preparação para publicação comercial continua aberta. Existem [minutas legais estruturadas](MINUTAS_LEGAIS.md), mas o responsável deve definir identidade do controlador, contato, retenção, terceiros e condições de uso; nenhuma dessas informações foi presumida ou publicada como definitiva.
