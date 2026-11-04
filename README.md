@@ -2,7 +2,7 @@
 
 Aplicação web em português brasileiro para organizar **contas a pagar e a receber**, vencimentos, baixas parciais e recorrências. Projeto de aprendizagem e validação de produto; **não é um banco, não movimenta dinheiro e não executa cobranças**.
 
-> **Estado em 04/11/2026:** implementação do MVP encerrada para fins internos, com ressalvas. O responsável relatou 21 cenários funcionais aprovados nas duas primeiras rodadas, além da conclusão dos testes administrativos. O GitHub Actions (TypeScript, testes e build) passou. **Não liberado comercialmente:** permanecem P1/P2, acesso funcional a uma segunda conta comum, textos legais definitivos, retenção e revisão de segurança.
+> **Status em 04/11/2026:** MVP de estudo da DIO concluído e publicado no Lovable, com testes funcionais relatados como aprovados e validação automatizada de TypeScript, testes e build. Não há operação comercial ou cobranças reais. As capturas da aplicação foram fornecidas e preparadas com dados pessoais ocultados; a publicação das imagens no repositório está pendente.
 
 ## Entrega do desafio DIO — projeto de estudo
 
@@ -10,6 +10,8 @@ Aplicação web em português brasileiro para organizar **contas a pagar e a rec
 **Solução proposta:** VenceHoje, aplicativo responsivo com lançamentos, agenda, painel e baixas parciais. **Finalidade exclusivamente educacional**, sem cobrança ou pagamentos reais.
 
 **Aplicação publicada no Lovable:** [https://vencehoje.lovable.app](https://vencehoje.lovable.app) (endereço oficial informado pelo responsável pelo projeto; acesso externo não pôde ser confirmado automaticamente nesta revisão). **Pré-visualização de desenvolvimento:** [abrir preview](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app). [Editor do projeto](https://lovable.dev/projects/571e03e9-a4eb-42c9-99cc-707359e4d369).
+
+**Evidências visuais:** foram recebidas e preparadas 13 capturas reais em dispositivo móvel, incluindo landing, login, recuperação de senha, painel, agenda, lançamentos, lembretes, contatos, categorias e administração. Consulte o [catálogo e instruções para inclusão dos arquivos](docs/screenshots/README.md). A galeria visual só será ativada após a inclusão dos PNGs no GitHub.
 
 **Entregáveis do desafio:**
 - [Checklist de entrega e evidências](docs/ENTREGA_DIO.md)
