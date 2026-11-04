@@ -47,19 +47,19 @@ function Config() {
       supabase.from("user_preferences").update({ reminder_days: Number(days) }).eq("user_id", data!.user.id),
     ]);
     setBusy(false);
-    if (a.error || b.error) return toast.error(errorMessage(a.error ?? b.error));
+    if (a.error || b.error) return void toast.error(errorMessage(a.error ?? b.error));
     toast.success("Configurações salvas.");
     qc.invalidateQueries();
   }
 
   async function changePassword(e: React.FormEvent) {
     e.preventDefault();
-    if (pw.next.length < 8) return toast.error("A nova senha deve ter pelo menos 8 caracteres.");
+    if (pw.next.length < 8) return void toast.error("A nova senha deve ter pelo menos 8 caracteres.");
     // Re-authenticate with the current password before changing it.
     const { error: authErr } = await supabase.auth.signInWithPassword({ email: data!.user.email!, password: pw.current });
-    if (authErr) return toast.error("Senha atual incorreta.");
+    if (authErr) return void toast.error("Senha atual incorreta.");
     const { error } = await supabase.auth.updateUser({ password: pw.next });
-    if (error) return toast.error("Não foi possível alterar a senha.");
+    if (error) return void toast.error("Não foi possível alterar a senha.");
     setPw({ current: "", next: "" });
     toast.success("Senha alterada.");
   }
@@ -69,7 +69,7 @@ function Config() {
     const { error } = await supabase.from("profiles").update({ deletion_requested_at: new Date().toISOString() }).eq("id", data!.user.id);
     setBusy(false);
     setDelOpen(false);
-    if (error) return toast.error(errorMessage(error));
+    if (error) return void toast.error(errorMessage(error));
     toast.success("Solicitação registrada. A equipe fará a exclusão e confirmará por e-mail.");
     qc.invalidateQueries();
   }
