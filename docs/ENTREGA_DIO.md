@@ -15,7 +15,7 @@
 | TAM, SAM, SOM e tese | Documentados como **hipóteses** | [Negócio](NEGOCIO.md) |
 | Mega prompt e alterações | Escopo reconstruído, **não transcrição literal** | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
 | Partes manuais/fora do MVP | Documentadas | [Mega prompt](MEGA_PROMPT_E_EVOLUCAO.md) |
-| Screenshots reais do aplicativo | **13 capturas recebidas e higienizadas**; arquivos PNG preparados para upload | [Catálogo das capturas](screenshots/README.md) |
+| Screenshots reais do aplicativo | **13 capturas PNG enviadas ao GitHub** no commit [37d8725](https://github.com/aaschenbach/dio-vencehoje-mvp/commit/37d87252080f5a6d9ad7638441c567cc43d447f0) | [Catálogo das capturas](screenshots/README.md) |
 | Pré-visualização do aplicativo | **URL informada:** [abrir VenceHoje](https://id-preview--571e03e9-a4eb-42c9-99cc-707359e4d369.lovable.app); acesso anônimo não verificado | Link fornecido pelo responsável |
 | Link da aplicação publicada | **Informado como publicado:** [vencehoje.lovable.app](https://vencehoje.lovable.app); acesso externo não confirmado automaticamente | Endereço fornecido pelo responsável |
 
@@ -23,9 +23,7 @@
 
 Foram recebidas 13 capturas autênticas das telas de landing, login, recuperação de senha, alteração de senha, painel, agenda, lançamento, lembretes, contatos, categorias e administração (visão geral, clientes e assinaturas). A fotografia de pessoas enviada por engano não integra o material.
 
-Foram preparados PNGs recortados, com os e-mails das telas administrativas ocultados. A integração do GitHub disponível nesta conversa só permite **gravações de texto**, não envio direto dos binários das imagens: o pacote `vencehoje_capturas_DIO.zip` está disponível como artefato da conversa e precisa ser descompactado e enviado à pasta `docs/screenshots/` do repositório. Consulte [o índice completo](screenshots/README.md). A galeria Markdown será incluída após confirmar os arquivos online.
-
-Esta é uma pendência **de upload**, não de nova captura de telas.
+As 13 imagens PNG foram enviadas pelo responsável ao diretório [`docs/screenshots/`](screenshots/README.md), conforme commit [37d8725](https://github.com/aaschenbach/dio-vencehoje-mvp/commit/37d87252080f5a6d9ad7638441c567cc43d447f0). O [README principal](../README.md) contém uma galeria visual das principais telas. Capturas com dados de clientes devem permanecer com e-mails ocultados.
 
 ## Endereço publicado e pré-visualização
 
@@ -38,7 +36,7 @@ Esta é uma pendência **de upload**, não de nova captura de telas.
 ## Publicação para fins de entrega
 
 1. Aplicativo publicado: [https://vencehoje.lovable.app](https://vencehoje.lovable.app), conforme URL e capturas fornecidas pelo responsável.
-2. Upload das imagens preparadas para `docs/screenshots/` e conferência dos links.
+2. **Concluído:** as 13 imagens foram enviadas e a galeria Markdown foi integrada ao README.
 3. Alterar a visibilidade do repositório GitHub de **Private** para **Public** quando o GitHub liberar a operação de visibilidade em andamento.
 4. Testar ambos os links sem autenticação e submeter à DIO.
 
@@ -48,4 +46,4 @@ Esta é uma pendência **de upload**, não de nova captura de telas.
 
 O repositório contém documentação do estudo; minutas legais e checklists de conformidade são **exercícios técnicos**, não aprovações para negócio real.
 
-A URL de publicação foi informada e as capturas autênticas foram recebidas e higienizadas. Para finalizar a entrega pública, resta enviar os arquivos PNG preparados ao GitHub e alterar a visibilidade do repositório para público, com verificação deslogada.
+A URL de publicação foi informada e as capturas autênticas foram recebidas e higienizadas. Para finalizar a entrega pública, resta alterar a visibilidade do repositório para público e verificar o acesso sem autenticação.
