@@ -57,7 +57,7 @@ function Painel() {
   const upcomingList = (upcoming.data ?? []).filter((e) => e.status !== "atrasado").slice(0, 8);
 
   const t = totals.data;
-  const forecast = t ? (toCents(t.open_rec) - toCents(t.open_pay)) / 100 : 0;
+  const forecast = t ? (toCents((t["open_rec"] ?? 0)) - toCents((t["open_pay"] ?? 0))) / 100 : 0;
 
   return (
     <>
@@ -87,10 +87,10 @@ function Painel() {
       {totals.isLoading ? <Loading /> : totals.error ? <ErrorState onRetry={() => totals.refetch()} /> : t && (
         <>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <Kpi label="A pagar em aberto" value={t.open_pay} tone="text-danger" hint="Vencimentos no período" />
-            <Kpi label="A receber em aberto" value={t.open_rec} tone="text-accent-foreground" hint="Vencimentos no período" />
-            <Kpi label="Vencido a pagar" value={t.late_pay} tone="text-danger" hint="Atrasados até hoje" />
-            <Kpi label="Vencido a receber" value={t.late_rec} tone="text-warning-foreground" hint="Atrasados até hoje" />
+            <Kpi label="A pagar em aberto" value={(t["open_pay"] ?? 0)} tone="text-danger" hint="Vencimentos no período" />
+            <Kpi label="A receber em aberto" value={(t["open_rec"] ?? 0)} tone="text-accent-foreground" hint="Vencimentos no período" />
+            <Kpi label="Vencido a pagar" value={(t["late_pay"] ?? 0)} tone="text-danger" hint="Atrasados até hoje" />
+            <Kpi label="Vencido a receber" value={(t["late_rec"] ?? 0)} tone="text-warning-foreground" hint="Atrasados até hoje" />
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border bg-primary p-5 text-primary-foreground md:col-span-1">
@@ -98,8 +98,8 @@ function Painel() {
               <p className="mt-2 text-2xl font-extrabold tabular">{formatBRL(forecast)}</p>
               <p className="mt-1 text-xs opacity-80">A receber menos a pagar em aberto. Não é saldo bancário nem dinheiro disponível.</p>
             </div>
-            <Kpi label="Pago no período" value={t.settled_pay} tone="text-muted-foreground" />
-            <Kpi label="Recebido no período" value={t.settled_rec} tone="text-muted-foreground" />
+            <Kpi label="Pago no período" value={(t["settled_pay"] ?? 0)} tone="text-muted-foreground" />
+            <Kpi label="Recebido no período" value={(t["settled_rec"] ?? 0)} tone="text-muted-foreground" />
           </div>
         </>
       )}
@@ -109,7 +109,7 @@ function Painel() {
           <h2 className="mb-3 text-lg font-bold">Atrasados</h2>
           {late.isLoading ? <Loading /> : lateList.length === 0 ? (
             <EmptyState title="Nada atrasado">Tudo em dia por aqui.</EmptyState>
-          ) : <EntryList entries={lateList} categories={categories} onOpen={setOpenId} />}
+          ) : <EntryList entries={lateList} categories={categories ?? []} onOpen={setOpenId} />}
         </section>
         <section>
           <h2 className="mb-3 text-lg font-bold">Próximos vencimentos</h2>
@@ -117,7 +117,7 @@ function Painel() {
             <EmptyState icon={<Inbox className="h-8 w-8" />} title="Nenhum vencimento no período" action={<Button onClick={() => setNewOpen(true)}>Cadastrar conta</Button>}>
               Cadastre suas contas a pagar e a receber para acompanhar os prazos.
             </EmptyState>
-          ) : <EntryList entries={upcomingList} categories={categories} onOpen={setOpenId} />}
+          ) : <EntryList entries={upcomingList} categories={categories ?? []} onOpen={setOpenId} />}
         </section>
       </div>
       <EntryFormDialog open={newOpen} onOpenChange={setNewOpen} />
